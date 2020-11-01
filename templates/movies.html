@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Movies</h2>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Director</th>
+    <th>Producer</th>
+    <th>Rating</th>
+    <th>People watched</th>
+  </tr>
+  {% for movie in movies %}
+    <tr>
+      <td>{{ movie.title }}</td>
+      <td>{{ movie.director }}</td>
+      <td>{{ movie.producer }}</td>
+      <td>{{ movie.rt_score }}</td>
+      <td>{{ movie.people|join:", " }}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+</body>
+</html>
